@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <main id="content">
+      <form id="survey-form">
+        <div>
+          <h1 id="title">Register</h1>
+          <p id="description">Join us and be part of the movement.</p>
+        </div>
+
+        <div class="row">
+          <div class="labels">
+            <label for="name" id="name-label">Name: <em>*</em></label>
+          </div>
+          <div class="user-input">
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="labels">
+            <label for="email" id="email-label">Email: <em>*</em></label>
+          </div>
+          <div class="user-input">
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="labels">
+            <label for="number" id="number-label">Age: <em>*</em></label>
+          </div>
+          <div class="user-input">
+            <input
+              type="number"
+              name="number"
+              min="1"
+              max="150"
+              id="number"
+              placeholder="Number"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="labels"><label for="dropdown">Dropdown:</label></div>
+          <div class="user-input">
+            <select name="dropdown" id="dropdown">
+              <option disabled value>Select an option</option>
+              <option value="Option1">Select an option</option>
+              <option value="Option2">Select an option</option>
+              <option value="Option3">Select an option</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="labels-checkable"><label for="radio">Radio:</label></div>
+          <div class="user-input-checkable">
+            <ul>
+              <li>
+                <input type="radio" name="radio" value="1" id="radio1" />
+                <label for="radio1">radio1</label>
+              </li>
+              <li>
+                <input type="radio" name="radio" value="2" id="radio2" />
+                <label for="radio2">radio2</label>
+              </li>
+              <li>
+                <input type="radio" name="radio" value="3" id="radio3" />
+                <label for="radio3">radio3</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="labels-checkable">
+            <label for="checkbox">Checkbox:</label>
+          </div>
+          <div class="user-input-checkable">
+            <ul>
+              <li>
+                <input type="checkbox" value="1" name="checkbox1" />
+                <label for="checkbox1">Checkbox1</label>
+              </li>
+              <li>
+                <input type="checkbox" value="2" name="checkbox2" />
+                <label for="checkbox2">Checkbox2</label>
+              </li>
+              <li>
+                <input type="checkbox" value="3" name="checkbox3" />
+                <label for="checkbox3">Checkbox3</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="labels"><label for="textarea">Textarea:</label></div>
+          <div class="user-input"><textarea rows="5"></textarea></div>
+        </div>
+
+        <div class="row"><button id="submit" type="submit">Submit</button></div>
+      </form>
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>

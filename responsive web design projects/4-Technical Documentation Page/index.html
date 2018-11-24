@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>JavaScript Documentation Page</title>
+</head>
+<body>
+<div id="container">
+  
+<nav id="navbar">
+  <header>Modern JS cheatsheet</header>
+  <a href="#Introduction" class="nav-link">Introduction</a>
+  <a href="#Variables" class="nav-link">Variables</a>
+  <a href="#Functions" class="nav-link">Functions</a>
+  <a href="#Destructuring" class="nav-link">Destructuring</a>
+  <a href="#Spread_operator" class="nav-link">Spread operator</a>
+  <a href="#reference" class="nav-link">Reference</a>
+</nav>
+
+<main id="main-doc">
+  <section class="main-section" id="Introduction">
+    <header>Introduction</header>
+    <p>This document is a cheatsheet for JavaScript you will frequently encounter in modern projects and most contemporary sample code.</p>
+    <p>This guide is not intended to teach you JavaScript from the ground up, but to help developers with basic knowledge who may struggle to get familiar with modern codebases (or let's say to learn React for instance) because of the JavaScript concepts used.</p>
+  </section>
+  <section class="main-section" id="Variables">
+    <header>Variables</header>
+    <p>In JavaScript, there are three keywords available to declare a variable, and each has its differences. Those are <code style="display: inline;">var, let</code>and<code style="display: inline;">const</code>.</p>
+    <p>Variables declared with const keyword can't be reassigned, while let and var can.
+
+I recommend always declaring your variables with const by default, and with let if you need to mutate it or reassign it later.</p>
+  </section>
+  <section class="main-section" id="Functions">
+    <header>Functions</header>
+    <p>The ES6 JavaScript update has introduced arrow functions, which is another way to declare and use functions. Here are the benefits they bring: 
+    <ul>
+      <li>More concise</li>
+      <li>this is picked up from surroundings</li>
+      <li>implicit return</li>
+    </ul>
+    </p>
+    <p>Sample code:</p>
+    <ul>
+      <li>Concision and implicit return:</li>
+    </ul>
+      <p>
+        <code>function double(x) { return x * 2; } // Traditional way
+console.log(double(2)) // 4</code>
+        <code>const double = x => x * 2; // Same function written as an arrow function with implicit return
+console.log(double(2)) // 4</code>
+    <ul>
+      <li>this reference</li>
+    </ul>
+      <p>
+        In an arrow function, this is equal to the this value of the enclosing execution context. Basically, with arrow functions, you don't have to do the "that = this" trick before calling a function inside a function anymore.
+        <p><code>function myFunc() {
+  this.myVar = 0;
+  setTimeout(() => {
+    this.myVar++;
+    console.log(this.myVar) // 1
+  }, 0);
+}</code></p>
+  </p>
+  </section>
+  <section class="main-section" id="Destructuring">
+    <header>Destructuring</header>
+    <p>Destructuring is a convenient way of creating new variables by extracting some values from data stored in objects or arrays.</p>
+    <p>Let's consider the following object for all the samples:</p>
+    <code>const person = {
+  firstName: "Nick",
+  lastName: "Anderson",
+  age: 35,
+  sex: "M"
+}</code>
+   <p>Without desturcturing</p>
+    <code>const first = person.firstName;
+const age = person.age;
+const city = person.city || "Paris";</code>
+    <p>With desturcturing, all in one line:</p>
+    <code>const { firstName: first, age, city = "Paris" } = person; // That's it !
+
+console.log(age) // 35 -- A new variable age is created and is equal to person.age
+console.log(first) // "Nick" -- A new variable first is created and is equal to person.firstName
+console.log(firstName) // ReferenceError -- person.firstName exists BUT the new variable created is named first
+console.log(city) // "Paris" -- A new variable city is created and since person.city is undefined, city is equal to the default value provided "Paris".</code>
+    <br>
+  </section>
+  <section class="main-section" id="Spread_operator">
+    <header>Spread operator</header>
+    <p>The spread operator <code style="display: inline;">...</code> has been introduced with ES2015 and is used to expand elements of an iterable (like an array) into places where multiple elements can fit.</p>
+    <p>Sample Code:</p>
+    <p><code>const arr1 = ["a", "b", "c"]; 
+const arr2 = [...arr1, "d", "e", "f"]; // ["a", "b", "c", "d", "e", "f"]</code></p>
+  </section>
+  <section class="main-section" id="reference">
+    <header>Reference</header>
+    <p>
+      <li>All the documentation is taken from <a href="https://github.com/mbeaudru/modern-js-cheatsheet" target="_blank">here.</a></li>
+    </p>
+  </section>
+</main>
+</div>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</body>
+</html>
